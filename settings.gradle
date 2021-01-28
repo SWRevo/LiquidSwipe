@@ -1,0 +1,3 @@
+rootProject.name = "LiquidOnBoardSample"
+include ':app'
+include ':liquid-swipe'
