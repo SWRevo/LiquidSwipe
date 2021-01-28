@@ -36,8 +36,46 @@ Add LiquidPager to your xml and use it like you would ViewPager, define in xml:
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 ```
+## MainActivity in Kotlin :
 
-Adapter in Kotlin :
+```java
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import id.indosw.liquidswipe_lib.LiquidPager
+import id.indosw.liquidswipesample.adapter.AdapterKt
+
+class MainActivityKt : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val pager = findViewById<LiquidPager>(R.id.pager)
+        pager.adapter = AdapterKt(supportFragmentManager)
+    }
+}
+```
+
+## MainActivity in Java :
+
+```java
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import id.indosw.liquidswipe_lib.LiquidPager;
+import id.indosw.liquidswipesample.adapter.AdapterJava;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        LiquidPager pager = findViewById(R.id.pager);
+        pager.setAdapter(new AdapterJava(getSupportFragmentManager()));
+    }
+}
+```
+
+## Adapter in Kotlin :
 
 ```java
 import android.os.Bundle
@@ -71,7 +109,7 @@ class AdapterKt(fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmen
 }
 ```
 
-Adapter in Java :
+## Adapter in Java :
 
 ```java
 import android.os.Bundle;
@@ -120,7 +158,7 @@ public class AdapterJava extends FragmentPagerAdapter {
 
 ```
 
-PageFragment in Kotlin :
+## PageFragment in Kotlin :
 
 ```java
 import android.graphics.Color
@@ -203,7 +241,7 @@ class PageFragmentKt : Fragment() {
 
 ```
 
-PageFragment in Java :
+## PageFragment in Java :
 
 ```java
 import android.graphics.Color;
